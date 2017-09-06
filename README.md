@@ -1,7 +1,7 @@
 # Defenestrate (System 31)
 
->> Defenestrate: verb (used with object), defenestrated, defenestrating.
->> 1. to throw (a person or thing) out of a window.
+> Defenestrate: verb (used with object), defenestrated, defenestrating.
+> 1. to throw (a person or thing) out of a window.
 Source: [Dictionary.com](http://www.dictionary.com/browse/defenestrate)
 
 "Defenestrate (System 31)" is a collection of fake `System32` tools to frustrate "software support" scammers, written in C#
