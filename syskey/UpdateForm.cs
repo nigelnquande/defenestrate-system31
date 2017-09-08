@@ -70,10 +70,13 @@ namespace syskey
         {
             passwordStartupRadioBtn.Checked = !this.sysGenPwdRadioBtn.Checked;
             // set the enabled state of components within the applicable group box
+            /*
             this.floppyStartupRadioBtn.Enabled = sysGenPwdRadioBtn.Checked;
             this.reqFloppyLbl.Enabled = sysGenPwdRadioBtn.Checked;
             this.storeLocallyRadioBtn.Enabled = sysGenPwdRadioBtn.Checked;
             this.storeLocalKeyLbl.Enabled = sysGenPwdRadioBtn.Checked;
+            */
+            this.sysPanel.Enabled = sysGenPwdRadioBtn.Checked;
         }
 
         private void cancelBtn_Click (object sender, EventArgs e)
