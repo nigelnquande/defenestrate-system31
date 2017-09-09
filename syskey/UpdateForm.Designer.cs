@@ -1,11 +1,17 @@
-﻿namespace syskey
+﻿using System.Windows.Forms;
+using System.ComponentModel;
+/* Using UIToolbox.RadioGroupBox library developed by Jeff Beeghly <mailto:jeffb42@hotmail.com>
+ * Originally published at http://www.codeproject.com/KB/miscctrl/CheckGBAndRadioGB.aspx
+ */
+using UIToolbox;
+
+namespace syskey
 {
-    partial class UpdateForm
-    {
+    partial class UpdateForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -28,174 +34,158 @@
         private void InitializeComponent ()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateForm));
-            this.passwordStartupGrpBox = new System.Windows.Forms.GroupBox();
-            this.confirmStartPwdTxt = new System.Windows.Forms.TextBox();
-            this.startPwdConfLbl = new System.Windows.Forms.Label();
-            this.startPwdTxt = new System.Windows.Forms.TextBox();
-            this.startPwdLbl = new System.Windows.Forms.Label();
-            this.reqStartPwdLbl = new System.Windows.Forms.Label();
-            this.passwordStartupRadioBtn = new System.Windows.Forms.RadioButton();
-            this.sysGenGrpBox = new System.Windows.Forms.GroupBox();
-            this.storeLocalKeyLbl = new System.Windows.Forms.Label();
+            this.mainPanel = new UIToolbox.RadioButtonPanel();
+            this.passwordStartupRadioGrpBox = new UIToolbox.RadioGroupBox();
+            this.pwdConfirmTxt = new System.Windows.Forms.TextBox();
+            this.pwdConfirmLbl = new System.Windows.Forms.Label();
+            this.pwdTxt = new System.Windows.Forms.TextBox();
+            this.pwdLbl = new System.Windows.Forms.Label();
+            this.reqPwdLbl = new System.Windows.Forms.Label();
+            this.sysGenPwdRadioGrpBox = new UIToolbox.RadioGroupBox();
+            this.sysGenPwdPanel = new UIToolbox.RadioButtonPanel();
+            this.storeLocallyLbl = new System.Windows.Forms.Label();
             this.storeLocallyRadioBtn = new System.Windows.Forms.RadioButton();
             this.reqFloppyLbl = new System.Windows.Forms.Label();
-            this.floppyStartupRadioBtn = new System.Windows.Forms.RadioButton();
-            this.sysGenPwdRadioBtn = new System.Windows.Forms.RadioButton();
+            this.storeFloppyRadioBtn = new System.Windows.Forms.RadioButton();
             this.OKBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
-            this.sysPanel = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.passwordStartupGrpBox.SuspendLayout();
-            this.sysGenGrpBox.SuspendLayout();
-            this.sysPanel.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.mainPanel.SuspendLayout();
+            this.passwordStartupRadioGrpBox.SuspendLayout();
+            this.sysGenPwdRadioGrpBox.SuspendLayout();
+            this.sysGenPwdPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // passwordStartupGrpBox
+            // mainPanel
             // 
-            this.passwordStartupGrpBox.Controls.Add(this.confirmStartPwdTxt);
-            this.passwordStartupGrpBox.Controls.Add(this.startPwdConfLbl);
-            this.passwordStartupGrpBox.Controls.Add(this.startPwdTxt);
-            this.passwordStartupGrpBox.Controls.Add(this.startPwdLbl);
-            this.passwordStartupGrpBox.Controls.Add(this.reqStartPwdLbl);
-            this.passwordStartupGrpBox.Controls.Add(this.passwordStartupRadioBtn);
-            this.passwordStartupGrpBox.Location = new System.Drawing.Point(10, 10);
-            this.passwordStartupGrpBox.Name = "passwordStartupGrpBox";
-            this.passwordStartupGrpBox.Size = new System.Drawing.Size(260, 130);
-            this.passwordStartupGrpBox.TabIndex = 1;
-            this.passwordStartupGrpBox.TabStop = false;
+            this.mainPanel.Controls.Add(this.passwordStartupRadioGrpBox);
+            this.mainPanel.Controls.Add(this.sysGenPwdRadioGrpBox);
+            this.mainPanel.Location = new System.Drawing.Point(0, 0);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(279, 330);
+            this.mainPanel.TabIndex = 0;
             // 
-            // confirmStartPwdTxt
+            // passwordStartupRadioGrpBox
             // 
-            this.confirmStartPwdTxt.Enabled = false;
-            this.confirmStartPwdTxt.Location = new System.Drawing.Point(90, 92);
-            this.confirmStartPwdTxt.MaxLength = 128;
-            this.confirmStartPwdTxt.Name = "confirmStartPwdTxt";
-            this.confirmStartPwdTxt.PasswordChar = '*';
-            this.confirmStartPwdTxt.Size = new System.Drawing.Size(160, 20);
-            this.confirmStartPwdTxt.TabIndex = 6;
-            this.confirmStartPwdTxt.UseSystemPasswordChar = true;
-            this.confirmStartPwdTxt.Leave += new System.EventHandler(this.confirmPwtText_Leave);
+            this.passwordStartupRadioGrpBox.Controls.Add(this.pwdConfirmTxt);
+            this.passwordStartupRadioGrpBox.Controls.Add(this.pwdConfirmLbl);
+            this.passwordStartupRadioGrpBox.Controls.Add(this.pwdTxt);
+            this.passwordStartupRadioGrpBox.Controls.Add(this.pwdLbl);
+            this.passwordStartupRadioGrpBox.Controls.Add(this.reqPwdLbl);
+            this.passwordStartupRadioGrpBox.DisableChildrenIfUnchecked = true;
+            this.passwordStartupRadioGrpBox.Location = new System.Drawing.Point(10, 10);
+            this.passwordStartupRadioGrpBox.Name = "passwordStartupRadioGrpBox";
+            this.passwordStartupRadioGrpBox.Size = new System.Drawing.Size(260, 120);
+            this.passwordStartupRadioGrpBox.TabIndex = 1;
+            this.passwordStartupRadioGrpBox.TabStop = false;
+            this.passwordStartupRadioGrpBox.Text = "Password Startup";
             // 
-            // startPwdConfLbl
+            // pwdConfirmTxt
             // 
-            this.startPwdConfLbl.Enabled = false;
-            this.startPwdConfLbl.Location = new System.Drawing.Point(10, 95);
-            this.startPwdConfLbl.Name = "startPwdConfLbl";
-            this.startPwdConfLbl.Size = new System.Drawing.Size(75, 20);
-            this.startPwdConfLbl.TabIndex = 5;
-            this.startPwdConfLbl.Text = "Confirm:";
+            this.pwdConfirmTxt.Location = new System.Drawing.Point(100, 87);
+            this.pwdConfirmTxt.MaxLength = 128;
+            this.pwdConfirmTxt.Name = "pwdConfirmTxt";
+            this.pwdConfirmTxt.PasswordChar = '*';
+            this.pwdConfirmTxt.Size = new System.Drawing.Size(150, 20);
+            this.pwdConfirmTxt.TabIndex = 6;
+            this.pwdConfirmTxt.UseSystemPasswordChar = true;
+            this.pwdConfirmTxt.WordWrap = false;
+            this.pwdConfirmTxt.Leave += new System.EventHandler(this.pwdConfirmTxt_Leave);
             // 
-            // startPwdTxt
+            // pwdConfirmLbl
             // 
-            this.startPwdTxt.Enabled = false;
-            this.startPwdTxt.Location = new System.Drawing.Point(90, 62);
-            this.startPwdTxt.MaxLength = 128;
-            this.startPwdTxt.Name = "startPwdTxt";
-            this.startPwdTxt.PasswordChar = '*';
-            this.startPwdTxt.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.startPwdTxt.Size = new System.Drawing.Size(160, 20);
-            this.startPwdTxt.TabIndex = 4;
-            this.startPwdTxt.UseSystemPasswordChar = true;
+            this.pwdConfirmLbl.Location = new System.Drawing.Point(15, 90);
+            this.pwdConfirmLbl.Name = "pwdConfirmLbl";
+            this.pwdConfirmLbl.Size = new System.Drawing.Size(80, 20);
+            this.pwdConfirmLbl.TabIndex = 5;
+            this.pwdConfirmLbl.Text = "Confirm:";
             // 
-            // startPwdLbl
+            // pwdTxt
             // 
-            this.startPwdLbl.Enabled = false;
-            this.startPwdLbl.Location = new System.Drawing.Point(10, 65);
-            this.startPwdLbl.Name = "startPwdLbl";
-            this.startPwdLbl.Size = new System.Drawing.Size(75, 20);
-            this.startPwdLbl.TabIndex = 3;
-            this.startPwdLbl.Text = "Password:";
+            this.pwdTxt.Location = new System.Drawing.Point(100, 57);
+            this.pwdTxt.MaxLength = 128;
+            this.pwdTxt.Name = "pwdTxt";
+            this.pwdTxt.PasswordChar = '*';
+            this.pwdTxt.Size = new System.Drawing.Size(150, 20);
+            this.pwdTxt.TabIndex = 4;
+            this.pwdTxt.UseSystemPasswordChar = true;
+            this.pwdTxt.WordWrap = false;
             // 
-            // reqStartPwdLbl
+            // pwdLbl
             // 
-            this.reqStartPwdLbl.Enabled = false;
-            this.reqStartPwdLbl.Location = new System.Drawing.Point(10, 25);
-            this.reqStartPwdLbl.Name = "reqStartPwdLbl";
-            this.reqStartPwdLbl.Size = new System.Drawing.Size(242, 29);
-            this.reqStartPwdLbl.TabIndex = 2;
-            this.reqStartPwdLbl.Text = "Requires a password to be entered during system start.";
+            this.pwdLbl.Location = new System.Drawing.Point(15, 60);
+            this.pwdLbl.Name = "pwdLbl";
+            this.pwdLbl.Size = new System.Drawing.Size(80, 20);
+            this.pwdLbl.TabIndex = 3;
+            this.pwdLbl.Text = "Password:";
             // 
-            // passwordStartupRadioBtn
+            // reqPwdLbl
             // 
-            this.passwordStartupRadioBtn.AutoCheck = false;
-            this.passwordStartupRadioBtn.AutoSize = true;
-            this.passwordStartupRadioBtn.Location = new System.Drawing.Point(6, -2);
-            this.passwordStartupRadioBtn.Name = "passwordStartupRadioBtn";
-            this.passwordStartupRadioBtn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.passwordStartupRadioBtn.Size = new System.Drawing.Size(113, 17);
-            this.passwordStartupRadioBtn.TabIndex = 1;
-            this.passwordStartupRadioBtn.Text = "Password Startup";
-            this.passwordStartupRadioBtn.UseVisualStyleBackColor = true;
-            this.passwordStartupRadioBtn.CheckedChanged += new System.EventHandler(this.passwordStartupRadioBtn_CheckedChanged);
+            this.reqPwdLbl.Location = new System.Drawing.Point(15, 20);
+            this.reqPwdLbl.Name = "reqPwdLbl";
+            this.reqPwdLbl.Size = new System.Drawing.Size(240, 30);
+            this.reqPwdLbl.TabIndex = 2;
+            this.reqPwdLbl.Text = "Requires a password to be entered during system start.";
             // 
-            // sysGenGrpBox
+            // sysGenPwdRadioGrpBox
             // 
-            this.sysGenGrpBox.Controls.Add(this.sysPanel);
-            this.sysGenGrpBox.Controls.Add(this.sysGenPwdRadioBtn);
-            this.sysGenGrpBox.Location = new System.Drawing.Point(7, 162);
-            this.sysGenGrpBox.Name = "sysGenGrpBox";
-            this.sysGenGrpBox.Size = new System.Drawing.Size(260, 160);
-            this.sysGenGrpBox.TabIndex = 7;
-            this.sysGenGrpBox.TabStop = false;
+            this.sysGenPwdRadioGrpBox.Checked = true;
+            this.sysGenPwdRadioGrpBox.Controls.Add(this.sysGenPwdPanel);
+            this.sysGenPwdRadioGrpBox.DisableChildrenIfUnchecked = true;
+            this.sysGenPwdRadioGrpBox.Location = new System.Drawing.Point(10, 150);
+            this.sysGenPwdRadioGrpBox.Name = "sysGenPwdRadioGrpBox";
+            this.sysGenPwdRadioGrpBox.Size = new System.Drawing.Size(260, 175);
+            this.sysGenPwdRadioGrpBox.TabIndex = 7;
+            this.sysGenPwdRadioGrpBox.TabStop = false;
+            this.sysGenPwdRadioGrpBox.Text = "System Generated Password";
+            this.sysGenPwdRadioGrpBox.CheckedChanged += new System.EventHandler(this.sysGenPwdRadioGrpBox_CheckedChanged);
             // 
-            // storeLocalKeyLbl
+            // sysGenPwdPanel
             // 
-            this.storeLocalKeyLbl.Location = new System.Drawing.Point(10, 85);
-            this.storeLocalKeyLbl.Name = "storeLocalKeyLbl";
-            this.storeLocalKeyLbl.Size = new System.Drawing.Size(220, 45);
-            this.storeLocalKeyLbl.TabIndex = 11;
-            this.storeLocalKeyLbl.Text = "Stores a key as part of the operating system, and no interaction is required duri" +
-    "ng system start.";
+            this.sysGenPwdPanel.Controls.Add(this.storeLocallyLbl);
+            this.sysGenPwdPanel.Controls.Add(this.storeLocallyRadioBtn);
+            this.sysGenPwdPanel.Controls.Add(this.reqFloppyLbl);
+            this.sysGenPwdPanel.Controls.Add(this.storeFloppyRadioBtn);
+            this.sysGenPwdPanel.Location = new System.Drawing.Point(5, 15);
+            this.sysGenPwdPanel.Name = "sysGenPwdPanel";
+            this.sysGenPwdPanel.Size = new System.Drawing.Size(250, 155);
+            this.sysGenPwdPanel.TabIndex = 7;
+            // 
+            // storeLocallyLbl
+            // 
+            this.storeLocallyLbl.Location = new System.Drawing.Point(25, 100);
+            this.storeLocallyLbl.Name = "storeLocallyLbl";
+            this.storeLocallyLbl.Size = new System.Drawing.Size(225, 45);
+            this.storeLocallyLbl.TabIndex = 11;
+            this.storeLocallyLbl.Text = "Stores a key as a part of the operating system, and no interaction is required du" +
+    "ring system start.";
             // 
             // storeLocallyRadioBtn
             // 
-            this.storeLocallyRadioBtn.AutoCheck = false;
-            this.storeLocallyRadioBtn.AutoSize = true;
             this.storeLocallyRadioBtn.Checked = true;
-            this.storeLocallyRadioBtn.Location = new System.Drawing.Point(0, 60);
+            this.storeLocallyRadioBtn.Location = new System.Drawing.Point(15, 75);
             this.storeLocallyRadioBtn.Name = "storeLocallyRadioBtn";
-            this.storeLocallyRadioBtn.Size = new System.Drawing.Size(144, 17);
+            this.storeLocallyRadioBtn.Size = new System.Drawing.Size(200, 20);
             this.storeLocallyRadioBtn.TabIndex = 10;
+            this.storeLocallyRadioBtn.TabStop = true;
             this.storeLocallyRadioBtn.Text = "Store Startup Key Locally";
             this.storeLocallyRadioBtn.UseVisualStyleBackColor = true;
-            this.storeLocallyRadioBtn.CheckedChanged += new System.EventHandler(this.storeLocallyRadioBtn_CheckedChanged);
             // 
             // reqFloppyLbl
             // 
-            this.reqFloppyLbl.Location = new System.Drawing.Point(10, 20);
+            this.reqFloppyLbl.Location = new System.Drawing.Point(25, 30);
             this.reqFloppyLbl.Name = "reqFloppyLbl";
-            this.reqFloppyLbl.Size = new System.Drawing.Size(220, 28);
+            this.reqFloppyLbl.Size = new System.Drawing.Size(225, 30);
             this.reqFloppyLbl.TabIndex = 9;
             this.reqFloppyLbl.Text = "Requires a floppy disk to be inserted during system start.";
             // 
-            // floppyStartupRadioBtn
+            // storeFloppyRadioBtn
             // 
-            this.floppyStartupRadioBtn.AutoCheck = false;
-            this.floppyStartupRadioBtn.AutoSize = true;
-            this.floppyStartupRadioBtn.Location = new System.Drawing.Point(3, 3);
-            this.floppyStartupRadioBtn.Name = "floppyStartupRadioBtn";
-            this.floppyStartupRadioBtn.Size = new System.Drawing.Size(181, 17);
-            this.floppyStartupRadioBtn.TabIndex = 8;
-            this.floppyStartupRadioBtn.TabStop = true;
-            this.floppyStartupRadioBtn.Text = "Store Startup Key on Floppy Disk";
-            this.floppyStartupRadioBtn.UseVisualStyleBackColor = true;
-            this.floppyStartupRadioBtn.CheckedChanged += new System.EventHandler(this.floppyStartupRadioBtn_CheckedChanged);
-            // 
-            // sysGenPwdRadioBtn
-            // 
-            this.sysGenPwdRadioBtn.AutoCheck = false;
-            this.sysGenPwdRadioBtn.AutoSize = true;
-            this.sysGenPwdRadioBtn.Checked = true;
-            this.sysGenPwdRadioBtn.Location = new System.Drawing.Point(6, -2);
-            this.sysGenPwdRadioBtn.Name = "sysGenPwdRadioBtn";
-            this.sysGenPwdRadioBtn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.sysGenPwdRadioBtn.Size = new System.Drawing.Size(166, 17);
-            this.sysGenPwdRadioBtn.TabIndex = 7;
-            this.sysGenPwdRadioBtn.TabStop = true;
-            this.sysGenPwdRadioBtn.Text = "System Generated Password";
-            this.sysGenPwdRadioBtn.UseVisualStyleBackColor = true;
-            this.sysGenPwdRadioBtn.CheckedChanged += new System.EventHandler(this.sysGenPwdRadioBtn_CheckedChanged);
+            this.storeFloppyRadioBtn.Location = new System.Drawing.Point(15, 5);
+            this.storeFloppyRadioBtn.Name = "storeFloppyRadioBtn";
+            this.storeFloppyRadioBtn.Size = new System.Drawing.Size(200, 20);
+            this.storeFloppyRadioBtn.TabIndex = 8;
+            this.storeFloppyRadioBtn.Text = "Store Startup Key on Floppy Disk";
+            this.storeFloppyRadioBtn.UseVisualStyleBackColor = true;
             // 
             // OKBtn
             // 
@@ -218,26 +208,6 @@
             this.cancelBtn.UseVisualStyleBackColor = true;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
-            // sysPanel
-            // 
-            this.sysPanel.Controls.Add(this.storeLocalKeyLbl);
-            this.sysPanel.Controls.Add(this.floppyStartupRadioBtn);
-            this.sysPanel.Controls.Add(this.reqFloppyLbl);
-            this.sysPanel.Controls.Add(this.storeLocallyRadioBtn);
-            this.sysPanel.Location = new System.Drawing.Point(13, 21);
-            this.sysPanel.Name = "sysPanel";
-            this.sysPanel.Size = new System.Drawing.Size(235, 135);
-            this.sysPanel.TabIndex = 7;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.passwordStartupGrpBox);
-            this.panel1.Controls.Add(this.sysGenGrpBox);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(275, 335);
-            this.panel1.TabIndex = 0;
-            // 
             // UpdateForm
             // 
             this.AcceptButton = this.OKBtn;
@@ -245,12 +215,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelBtn;
             this.ClientSize = new System.Drawing.Size(279, 366);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.OKBtn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(295, 405);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(295, 405);
             this.Name = "UpdateForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
@@ -258,35 +230,32 @@
             this.Text = "Startup Key";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UpdateForm_FormClosing);
             this.Load += new System.EventHandler(this.UpdateForm_Load);
-            this.passwordStartupGrpBox.ResumeLayout(false);
-            this.passwordStartupGrpBox.PerformLayout();
-            this.sysGenGrpBox.ResumeLayout(false);
-            this.sysGenGrpBox.PerformLayout();
-            this.sysPanel.ResumeLayout(false);
-            this.sysPanel.PerformLayout();
-            this.panel1.ResumeLayout(false);
+            this.mainPanel.ResumeLayout(false);
+            this.passwordStartupRadioGrpBox.ResumeLayout(false);
+            this.passwordStartupRadioGrpBox.PerformLayout();
+            this.sysGenPwdRadioGrpBox.ResumeLayout(false);
+            this.sysGenPwdRadioGrpBox.PerformLayout();
+            this.sysGenPwdPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
-        #endregion
+        private RadioButtonPanel mainPanel;
+        private RadioButtonPanel sysGenPwdPanel;
+        private RadioGroupBox passwordStartupRadioGrpBox;
+        private RadioGroupBox sysGenPwdRadioGrpBox;
 
-        private System.Windows.Forms.GroupBox passwordStartupGrpBox;
-        private System.Windows.Forms.RadioButton passwordStartupRadioBtn;
-        private System.Windows.Forms.Label reqStartPwdLbl;
-        private System.Windows.Forms.TextBox startPwdTxt;
-        private System.Windows.Forms.Label startPwdLbl;
-        private System.Windows.Forms.TextBox confirmStartPwdTxt;
-        private System.Windows.Forms.Label startPwdConfLbl;
-        private System.Windows.Forms.GroupBox sysGenGrpBox;
-        private System.Windows.Forms.RadioButton sysGenPwdRadioBtn;
-        private System.Windows.Forms.RadioButton floppyStartupRadioBtn;
-        private System.Windows.Forms.Label reqFloppyLbl;
-        private System.Windows.Forms.Label storeLocalKeyLbl;
-        private System.Windows.Forms.RadioButton storeLocallyRadioBtn;
-        private System.Windows.Forms.Button OKBtn;
-        private System.Windows.Forms.Button cancelBtn;
-        private System.Windows.Forms.Panel sysPanel;
-        private System.Windows.Forms.Panel panel1;
+        #endregion
+        private Button OKBtn;
+        private Button cancelBtn;
+        private Label reqPwdLbl;
+        private TextBox pwdConfirmTxt;
+        private Label pwdConfirmLbl;
+        private TextBox pwdTxt;
+        private Label pwdLbl;
+        private RadioButton storeFloppyRadioBtn;
+        private Label reqFloppyLbl;
+        private Label storeLocallyLbl;
+        private RadioButton storeLocallyRadioBtn;
     }
 }

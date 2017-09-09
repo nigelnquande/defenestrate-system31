@@ -43,6 +43,10 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIToolbox.RadioGroupBox, Version=1.1.0.0, Culture=neutral, PublicKeyToken=1e4be6f27f1c1744, processorArchitecture=MSIL">
+      <HintPath>..\..\CheckGroupBoxAndRadioGroupBox\RadioGroupBox\RadioGroupBox\bin\Release\UIToolbox.RadioGroupBox.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainForm.cs">
