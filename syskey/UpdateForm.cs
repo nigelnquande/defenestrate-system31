@@ -37,13 +37,13 @@ namespace syskey
             if (pwdConfirmTxt.Text.Length == 0 || pwdConfirmTxt.Text.Length == 0 || !pwdConfirmTxt.Text.Equals(pwdTxt.Text)) {
                 pwdConfirmTxt.BackColor = Color.Red;
                 pwdConfirmTxt.ForeColor = Color.DarkRed;
-                pwdConfirmTxt.SelectAll();
                 // disable "OK" button
                 this.OKBtn.Enabled = false;
                 DialogResult dr = MessageBox.Show(
                        "There is no password entered in the password fields or the passwords do not match. Please enter a password.",
                        "Empty Password", MessageBoxButtons.OK, MessageBoxIcon.Warning
                 );
+                pwdConfirmTxt.SelectAll();
             } else {
                 pwdConfirmTxt.ForeColor = Color.DarkGreen;
                 pwdConfirmTxt.BackColor = Color.LightGreen;
