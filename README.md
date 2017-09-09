@@ -31,10 +31,10 @@ The below tools are still in development, but the end result of this project is 
 
 # Usage
 
-For most effective use:
+For most effective use, on a VM behind a VPN:
 
-1. Create a `C:\` drive (or, on \*NIX, change your shell prompt to look like Windows command prompt's, *id est*, prepend `C:` to path, replace `/` with `\` and place `>` after it.)
+1. Create a `C:\` drive (or, on \*NIX, change your shell prompt to look like Windows command prompt's, *id est*, prepend `C:` to path, replace `/` with `\` and place `>` after it. Then, alias `cmd` to whatever shell you use.)
 2. Install Windows on another drive (Eg: `D:\`)
-3. Create the directory path `C:\Windows\System32` and place the fake tools there.
-4. Prepend `C:\Windows\System32` to your `PATH` variable.
+3. Create the directory path `C:\Windows\System32` (or `/Windows/System32` on \*NIX) and place the fake tools there.
+4. Prepend `C:\Windows\System32` (or `/Windows/System32` on \*NIX) to your `PATH` variable.
 5. Confuse/frustrate scammers.
