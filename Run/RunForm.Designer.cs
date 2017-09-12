@@ -116,6 +116,7 @@
             this.OkBtn.TabIndex = 7;
             this.OkBtn.Text = "OK";
             this.OkBtn.UseVisualStyleBackColor = true;
+            this.OkBtn.Click += new System.EventHandler(this.OkBtn_Click);
             // 
             // RunForm
             // 

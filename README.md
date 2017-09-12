@@ -38,6 +38,7 @@ For most effective use, on a VM behind a VPN:
 3. Create the directory path `C:\Windows\System32` (or `/Windows/System32` on \*NIX) and place the fake tools there.
 4. Prepend `C:\Windows\System32` (or `/Windows/System32` on \*NIX) to your `PATH` variable.
 5. On \*NIX, create a directory link named `/Users/` that maps to `/home/` (optional)
+6. ON \*NIX, add the following to the global `bash_profile` file located in `/etc/`:  `export WINDIR="/Windows"`
 6. Confuse/frustrate scammers.
 
 _Note:_ This project makes use of the [UIToolbox.RadioGroupBox](https://www.codeproject.com/Articles/32780/CheckGroupBox-and-RadioGroupBox) library Copyright &copy; 2009 by Jeff Beeghly. It is also available on [GitHub](https://github.com/DigitalGlobe/DGConnect-ESRI/tree/master/GbdxTools).

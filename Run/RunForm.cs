@@ -116,5 +116,13 @@ namespace run
 
 
         }
+
+        private void OkBtn_Click (object sender, EventArgs e) {
+            // get the entered/selected item's text
+            // if it starts with the pattern [a-z]{3,5}[:][\/]{2}, assume it's a URL and try to open it with the default browser
+            // else if it starts with [a-zA-Z\\\/]{1,2}([:][\\])?, assume it's a directory and try to open it in the default file manager
+            // else try to find it in %PATH% (or $PATH on *NIX). If it doesn't exist, hide run dialog form, show warning dialog, then show form:
+            // Title: "{cmdName}", message: "Windows cannot find '{cmdName}'. Make sure you typed the name correctly, then try again.", type: Error, button: OK
+        }
     }
 }
