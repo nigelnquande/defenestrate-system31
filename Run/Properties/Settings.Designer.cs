@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Run.Properties
+namespace run.Properties
 {
 
 
