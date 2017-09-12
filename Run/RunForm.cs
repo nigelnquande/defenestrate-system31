@@ -48,7 +48,7 @@ namespace run
                 userDirExists = false;
             }
 
-            String filePath = userAppData + "run.xml";
+            String filePath = userAppData + "run_items.xml";
             if (userDirExists) {
                 StreamWriter xmlWriter = null;
                 if (!File.Exists(filePath)) try {
@@ -62,6 +62,7 @@ namespace run
                         xmlWriter.WriteLine("\t<item>syskey</item>"); // fake syskey
                         xmlWriter.WriteLine("\t<item>msinfo32</item>"); // fake msinfo32
                         xmlWriter.WriteLine("\t<item>services.msc</item>"); // fake services.msc
+                        xmlWriter.WriteLine("\t<item>appwiz.cpl</item>"); // fake control_panel (replace "control panel" with "control_panel", case insensitive)
                         xmlWriter.WriteLine("</items>");
 
                     } catch (Exception ex) {
@@ -75,7 +76,7 @@ namespace run
                 0, Application.ExecutablePath.LastIndexOf(Path.DirectorySeparatorChar) + 1
             ); // use the current execution directory as the App Data directory
 
-            return userAppData + "run.xml";
+            return userAppData + "run_items.xml";
         }
 
         private List<string> GetNodeText (XmlDocument doc) {
